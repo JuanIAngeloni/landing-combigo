@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CombiGo — Viajá en combi, sin vueltas</title>
+  <meta name="description" content="Buscá viajes, reservá tu pasaje y viajá con un código QR. Para empresas: gestioná viajes, choferes y pasajeros en un solo lugar.">
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="logo" href="#"><img src="favicon.png" alt="">CombiGo</a>
+      <nav>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#empresas">Para empresas</a>
+        <a class="btn sm secondary" href="http://localhost:8081/login">Ingresar</a>
+        <a class="btn sm" href="http://localhost:8081/register">Crear cuenta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Combis y transportes, en una sola app</p>
+          <h1>Viajá en combi, sin vueltas.</h1>
+          <p class="lead">Buscá tu destino o evento, elegí horario y reservá tu pasaje en segundos. Subí con tu código QR y listo.</p>
+          <div class="search" aria-hidden="true"><span>¿A dónde vas?</span><b>→</b></div>
+          <div class="actions">
+            <a class="btn" href="http://localhost:8081/register">Reservar mi viaje</a>
+            <a class="btn secondary" href="#empresas">Soy una empresa</a>
+          </div>
+        </div>
+        <div class="mock" aria-hidden="true">
+          <div class="trip t1"><div class="plate">MDP</div><div class="meta"><strong>Buenos Aires → Mar del Plata</strong><small>Sáb 14 · 07:30</small><div class="row"><span class="badge">Lugares disponibles</span><span class="price">$18.500</span></div></div></div>
+          <div class="trip t2"><div class="plate">BRC</div><div class="meta"><strong>Neuquén → Bariloche</strong><small>Dom 15 · 09:00</small><div class="row"><span class="badge">Últimos lugares</span><span class="price">$24.000</span></div></div></div>
+          <div class="qr"><i></i><small>Tu pasaje · Se valida al subir</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <div class="wrap">
+        <p class="eyebrow">Cómo funciona</p>
+        <h2>Tres pasos y estás arriba.</h2>
+        <div class="steps">
+          <div class="step"><div class="n">1</div><h3>Buscá</h3><p>Filtrá por destino, fecha o evento y compará horarios y precios.</p></div>
+          <div class="step"><div class="n">2</div><h3>Reservá</h3><p>Elegí tus lugares y confirmá. Tu reserva queda guardada en tu historial.</p></div>
+          <div class="step"><div class="n">3</div><h3>Viajá</h3><p>Mostrá tu código QR al chofer: se valida al instante, sin papeles.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="empresas">
+      <div class="wrap">
+        <p class="eyebrow">Para pasajeros y empresas</p>
+        <h2>Una plataforma, dos formas de usarla.</h2>
+        <div class="split">
+          <div class="panel client">
+            <h3>Si viajás</h3>
+            <p>Todo lo que necesitás para llegar, desde el celular.</p>
+            <ul>
+              <li>Búsqueda por destino o evento</li>
+              <li>Horarios y precios claros antes de reservar</li>
+              <li>Pasaje con QR e historial de viajes</li>
+            </ul>
+            <a class="btn" href="http://localhost:8081/register">Crear mi cuenta</a>
+          </div>
+          <div class="panel company">
+            <h3>Si tenés una empresa</h3>
+            <p>Ordená la operación y llená más lugares.</p>
+            <ul>
+              <li>Creá y editá viajes, con calendario</li>
+              <li>Administrá a tus choferes</li>
+              <li>Lista de pasajeros y reservas por viaje</li>
+              <li>Escáner QR para validar al subir</li>
+            </ul>
+            <a class="btn on-color" href="http://localhost:8081/register">Registrar mi empresa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="eyebrow">Por qué CombiGo</p>
+        <h2>Menos fricción, más viajes.</h2>
+        <div class="features">
+          <div class="feature"><div class="dot" style="background:var(--peach)"></div><h3>Rápido</h3><p>De la búsqueda a la reserva en pocos toques.</p></div>
+          <div class="feature"><div class="dot" style="background:var(--mint)"></div><h3>Sin papeles</h3><p>Tu pasaje vive en el celular como un QR.</p></div>
+          <div class="feature"><div class="dot" style="background:var(--ochre)"></div><h3>Control total</h3><p>Las empresas ven viajes, cupos y pasajeros al día.</p></div>
+          <div class="feature"><div class="dot" style="background:var(--coral)"></div><h3>Seguro</h3><p>Cada empresa accede solo a sus propios datos.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="cta">
+          <h2>¿Listo para tu próximo viaje?</h2>
+          <p>Creá tu cuenta y reservá en minutos.</p>
+          <div class="actions">
+            <a class="btn on-color" href="http://localhost:8081/register">Empezar ahora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 CombiGo</span>
+      <nav><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a><a href="eliminar-datos.html">Eliminar mis datos</a></nav>
+    </div>
+  </footer>
+</body>
+</html>
