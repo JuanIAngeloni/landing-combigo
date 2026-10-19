@@ -30,7 +30,7 @@ header nav a:hover{text-decoration:underline}
 .hero h1{font-size:clamp(34px,6.2vw,60px);font-weight:800;letter-spacing:-.05em;line-height:1.08;margin-top:22px}
 .lead{max-width:760px;margin:22px auto 0;font-size:19px;color:var(--mut)}
 .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
-.show{position:relative;overflow:hidden;padding:56px 0 8px}
+.show{position:relative;overflow-x:clip;padding:56px 0 8px}
 .mainS{width:min(561px,100% - 48px);margin:0 auto}
 .side{position:absolute;top:138px;width:391px}
 .side.l{right:calc(50% + 379px)}.side.r{left:calc(50% + 379px)}
@@ -107,9 +107,27 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 footer nav{display:flex;gap:24px}
 footer a{font-weight:500;color:var(--ink);text-decoration:none}
 footer a:hover{text-decoration:underline}
+/* Zoom al pasar el mouse: las pantallas y los videos son chicos y no se leen bien. Solo con mouse (hover) y si hay lugar en pantalla. */
+.s,.vid{transition:transform .28s ease,box-shadow .28s ease}
+@media(hover:hover){.s,.vid{cursor:zoom-in}}
+@media(hover:hover) and (min-width:900px){
+.mainS .s:hover{transform:scale(1.45);z-index:6;box-shadow:0 32px 64px -12px rgba(0,26,18,.4)}
+}
+/* Las laterales se agrandan hacia el centro del hero (575px = distancia de su centro al centro de la pagina). El hover vive en el contenedor, que no se mueve. */
+@media(hover:hover) and (min-width:1101px){
+.side:hover{z-index:7}
+.side.l:hover .s{transform:translateX(575px) scale(1.8);box-shadow:0 32px 64px -12px rgba(0,26,18,.4)}
+.side.r:hover .s{transform:translateX(-575px) scale(1.8);box-shadow:0 32px 64px -12px rgba(0,26,18,.4)}
+}
+@media(hover:hover) and (min-width:801px){
+.vid{position:relative}
+.vgrid figure:nth-child(1) .vid{transform-origin:left center}
+.vgrid figure:nth-child(2) .vid{transform-origin:right center}
+.vgrid .vid:hover{transform:scale(1.6);z-index:6;box-shadow:0 32px 64px -12px rgba(0,0,0,.5)}
+}
 @media(max-width:1100px){.side{display:none}}
 @media(max-width:1040px){header nav{display:none}}
 @media(max-width:900px){section{padding:64px 0}.tgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:800px){.pgrid,.vgrid,.fgrid{grid-template-columns:1fr}.cta{padding:56px 24px}.soon{flex-direction:column;align-items:flex-start}}
 @media(max-width:560px){.acts .o{display:none}.tgrid{grid-template-columns:1fr}.ct{padding:22px}.hero{padding-top:36px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.s,.vid{transition:none}}
