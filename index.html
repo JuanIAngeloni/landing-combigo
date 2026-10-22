@@ -11,7 +11,7 @@
 <meta property="og:description" content="Viajes, reservas, choferes, calendario y cobros directos a tu Mercado Pago, en un solo panel.">
 <link rel="icon" href="favicon.png">
 <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="landing.css?v=20261021">
+<link rel="stylesheet" href="landing.css?v=20261022">
 </head>
 <body>
 <header>
@@ -90,7 +90,7 @@
   </div>
 </section>
 
-<div class="w"><div class="soon"><b>Próximamente</b><p>Escáner de QR para validar el pasaje al subir al vehículo.</p></div></div>
+<div class="w"><div class="soon"><b>Incluido</b><p>Escáner de QR para validar el pasaje al subir al vehículo.</p></div></div>
 
 <section id="preguntas" aria-labelledby="h-faq">
   <div class="w">
@@ -123,6 +123,18 @@
 if(matchMedia('(prefers-reduced-motion:reduce)').matches||!('IntersectionObserver' in window)){v.forEach(function(x){x.controls=true});return}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.play().catch(function(){})}else{e.target.pause()}})},{threshold:.4});
 v.forEach(function(x){io.observe(x)});})();
+</script>
+<script>
+/* Pantallas de muestra en celular: al tocar una se abre ampliada y se desplaza con el dedo (la versión chica no se lee). */
+(function(){var mq=matchMedia('(max-width:1100px)');var shots=document.querySelectorAll('.show .s');if(!shots.length)return;
+var ov=document.createElement('div');ov.className='zoom';ov.hidden=true;ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label','Pantalla ampliada');
+ov.innerHTML='<button type="button" class="zoom-x" aria-label="Cerrar">&times;</button><div class="zoom-body"></div>';document.body.appendChild(ov);
+var body=ov.querySelector('.zoom-body');var opener=null;
+function close(){ov.hidden=true;body.innerHTML='';document.body.classList.remove('zoom-open');if(opener)opener.focus()}
+function open(s){var c=s.cloneNode(true);c.removeAttribute('tabindex');body.innerHTML='';body.appendChild(c);ov.hidden=false;document.body.classList.add('zoom-open');opener=s;ov.querySelector('.zoom-x').focus()}
+shots.forEach(function(s){s.setAttribute('tabindex','0');s.addEventListener('click',function(){if(mq.matches)open(s)});s.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&mq.matches){e.preventDefault();open(s)}})});
+ov.querySelector('.zoom-x').addEventListener('click',close);body.addEventListener('click',function(e){if(e.target===body)close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!ov.hidden)close()});})();
 </script>
 <!-- Analitica (PostHog). Pegar la key publica del proyecto (phc_...); vacia = no mide nada. Sin cookies. -->
 <script type="module">

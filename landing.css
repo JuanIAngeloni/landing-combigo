@@ -134,7 +134,16 @@ footer a:hover{text-decoration:underline}
 .mainS{order:-1;width:min(86vw,560px);margin:0}
 .side .cap,.side.r .cap{position:static;translate:none;margin:16px auto 0}
 .mainS .s:hover{transform:none}
+.show .s{cursor:zoom-in}
+.show .cap:after{content:" · tocá para ampliar";font-weight:400;opacity:.75}
 }
+/* Pantalla ampliada: ancho de diseño fijo (900 px) dentro de un visor que se desliza; el contenido interno escala con el contenedor. */
+.zoom{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;background:rgba(10,10,10,.88)}
+.zoom[hidden]{display:none}
+.zoom-body{flex:1;overflow:auto;padding:64px 16px 32px;-webkit-overflow-scrolling:touch}
+.zoom-body .s{width:900px;margin:0 auto;cursor:default}
+.zoom-x{position:absolute;top:10px;right:10px;z-index:2;width:44px;height:44px;border:0;border-radius:50%;background:var(--cream);color:var(--ink);font-size:28px;line-height:1;cursor:pointer}
+body.zoom-open{overflow:hidden}
 /* Debajo de 1040 px el menú del encabezado pasa a una barra de secciones que se desliza con el dedo, debajo de la fila del logo. */
 .subnav{display:none}
 @media(max-width:1040px){
